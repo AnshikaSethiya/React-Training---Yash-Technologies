@@ -17,9 +17,12 @@ function App() {
     AuthenticateService.logout();
   }
 
+  const isLoggedIn = () => {
+    AuthenticateService.isLoggedIn();
+  }
   return (
     <div className="App">
-      <Header />
+      <Header isLoggedIn={isLoggedIn}/>
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Login login={login}/>} />

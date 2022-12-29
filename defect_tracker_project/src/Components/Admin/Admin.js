@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Table, Button } from 'react-bootstrap'
 
 const Admin = () => {
-  const [defects, setDefects] = useState({});
+  const [defects, setDefects] = useState([]);
 
   const fetchDefects = async () => {
     const data = await fetch("http://localhost:5000/defects")
@@ -10,16 +10,21 @@ const Admin = () => {
     setDefects(parsedData);
   }
 
-  const changeStatus = async (id) => {
+  const changeStatus = async (item) => {
     const requestOptions={
       'method':'PUT',
       'body':JSON.stringify({
-          status:"close"
+        username: "test_user",
+        category: item.category,
+        description: item.description,
+        priority: item.priority,
+        status:"close"
        }),
        'headers':{"Content-type":"application/json"}
   }
-  const data=await fetch(`http://localhost:5000/defects/${id}`, requestOptions)
+  const data=await fetch(`http://localhost:5000/defects/${item.id}`, requestOptions)
   const response =await data.json();
+  console.log(item)
   //navigate("/todos")
   }
 
@@ -49,7 +54,7 @@ const Admin = () => {
                         <td>{item.status}</td>
                         {
                           item.status === "close" ? <td>No Action Pending</td> : 
-                          <td><Button variant="outline-primary" onClick={() => {changeStatus(item.id)}}>Close Defect</Button></td>
+                          <td><Button variant="outline-primary" onClick={() => {changeStatus(item)}}>Close Defect</Button></td>
                         }
                     </tr>
                 })}

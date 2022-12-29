@@ -2,7 +2,10 @@ import React from "react";
 import logo from './images/logo.svg'
 import { Row, Col } from "react-bootstrap";
 
-const Header = () => {
+const Header = (props) => {
+
+  console.log(props)
+
   return (
     <div className = "header nav-background shadow-sm p-3 mb-5">
       <Row>

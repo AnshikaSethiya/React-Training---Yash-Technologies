@@ -13,10 +13,8 @@ const Login = (props) => {
     const onFormSubmit = (e) => {
         e.preventDefault();
         if(user.username === "Anshika" && user.password === "Anshika123"){
-
-        }
-
-        if(user.username === "test_user" && user.password === "test123"){
+            navigate("/admin")
+        }else if(user.username === "test_user" && user.password === "test123"){
             props.login(user.username);
             navigate("/add")
         }else{

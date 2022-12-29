@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "uid": "1",
+      "username": "Anshika",
+      "password": "Anshika123",
+      "category": "admin"
+    },
+    {
+      "uid": "2",
+      "username": "test_user",
+      "password": "test123",
+      "category": "user"
+    }
+  ],
+  "defects": [
+    {
+      "username": "test_user",
+      "category": "ui",
+      "description": "display not working properly",
+      "priority": "2",
+      "status": "close",
+      "id": "1"
+    },
+    {
+      "username": "test_user",
+      "category": "functional",
+      "description": "Test",
+      "priority": "3",
+      "id": "984",
+      "status": "open"
+    },
+    {
+      "username": "test_user",
+      "category": "Functional",
+      "description": "test...",
+      "priority": "4",
+      "id": "370",
+      "status": "open"
+    }
+  ]
+}
