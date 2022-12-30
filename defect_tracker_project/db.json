@@ -27,8 +27,8 @@
       "category": "functional",
       "description": "Test",
       "priority": "3",
-      "id": "984",
-      "status": "open"
+      "status": "close",
+      "id": "984"
     },
     {
       "username": "test_user",
@@ -36,6 +36,14 @@
       "description": "test...",
       "priority": "4",
       "id": "370",
+      "status": "open"
+    },
+    {
+      "username": "test_user",
+      "category": "Functional",
+      "description": "test user",
+      "priority": "3",
+      "id": "726",
       "status": "open"
     }
   ]

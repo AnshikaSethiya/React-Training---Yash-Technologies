@@ -12,7 +12,7 @@ const Home = () => {
         <div className='productContainer'>
             {
                 data.state.products.map((prod) => {
-                    return <SingleProduct prod={prod} />
+                    return <SingleProduct prod={prod} key={prod.id}/>
                 })
             }
         </div>

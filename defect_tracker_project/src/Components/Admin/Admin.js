@@ -11,6 +11,7 @@ const Admin = () => {
   }
 
   const changeStatus = async (item) => {
+    
     const requestOptions={
       'method':'PUT',
       'body':JSON.stringify({
@@ -47,7 +48,6 @@ const Admin = () => {
                 <tbody>
                 {defects.map((item) => {
                     return <tr key={item.id}>
-                        {/* {console.log("index: ", item)} */}
                         <td>{item.category}</td>
                         <td>{item.description}</td>
                         <td>{item.priority}</td>

@@ -14,9 +14,10 @@ const Login = (props) => {
         e.preventDefault();
         if(user.username === "Anshika" && user.password === "Anshika123"){
             navigate("/admin")
+            props.login(user.username)
         }else if(user.username === "test_user" && user.password === "test123"){
-            props.login(user.username);
             navigate("/add")
+            props.login(user.username);
         }else{
             window.alert('Username or Password incorrect!!');
         }
