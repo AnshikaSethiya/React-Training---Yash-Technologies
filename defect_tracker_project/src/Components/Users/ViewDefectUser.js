@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
-import { Container, Table, Button } from 'react-bootstrap'
-
+import { Link, useNavigate } from 'react-router-dom';
+import { Container, Table, Button, Tooltip, OverlayTrigger } from 'react-bootstrap'
+import { AiOutlineDelete } from 'react-icons/ai'
 
 const ViewDefectUser = () => {
   const [viewData, setViewData] = useState([])
@@ -48,13 +48,21 @@ const ViewDefectUser = () => {
                         <td>{item.status}</td>
                         {
                           item.status === "open" ? 
-                          <td><Button variant="danger" onClick={() => DeleteAction(item.id)}>Delete</Button></td> :
+                          <td>
+                           <OverlayTrigger key="top" placement="top" overlay={<Tooltip id='top-tooltip'>Delete Defect</Tooltip>}>
+                                {/* <AiOutlineDelete fontSize='1.5rem' cursor='pointer' color='red' onClick={() => DeleteAction(item.id)}/> */}
+                                <Button className='btn' variant='danger' onClick={() => DeleteAction(item.id)}><AiOutlineDelete fontSize='1.2rem'/></Button>
+                           </OverlayTrigger>
+                            </td> :
                           <td> - </td>
                         }
                     </tr>
                 })}
                 </tbody>
             </Table>
+            <Link to="/add">
+                <Button variant="secondary">Add Defect</Button>
+            </Link>
     </Container>
   )
 }

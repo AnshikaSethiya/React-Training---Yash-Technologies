@@ -22,8 +22,8 @@ function App() {
   }
   return (
     <div className="App">
-      <Header isLoggedIn={isLoggedIn}/>
       <BrowserRouter>
+      <Header isLoggedIn={isLoggedIn}/>
         <Routes>
           <Route exact path='/' element={<Login login={login}/>} />
           <Route exact path='/view' element={<ViewDefectUser />} />

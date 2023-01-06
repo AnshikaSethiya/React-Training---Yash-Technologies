@@ -17,11 +17,17 @@ const MyState = (props) => {
     })) )
   
     const [state , dispatch]=useReducer(cartReducer, {products:products,cart:[]})
+    const [productState , productDispatcher]=useReducer(productReducer ,{
+      byStock:false,
+      byFastDelivery:false,
+      byRating:0,
+      sort:''
+   })
 
   return (
 
     <div>
-        <Context.Provider value={{state , dispatch}}>
+        <Context.Provider value={{state , dispatch, productState, productDispatcher}  }>
             {props.children}
         </Context.Provider>
     </div>

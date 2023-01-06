@@ -33,17 +33,17 @@
     {
       "username": "test_user",
       "category": "Functional",
-      "description": "test...",
-      "priority": "4",
-      "id": "370",
+      "description": "test user",
+      "priority": "3",
+      "id": "726",
       "status": "open"
     },
     {
       "username": "test_user",
-      "category": "Functional",
-      "description": "test user",
-      "priority": "3",
-      "id": "726",
+      "category": "UI",
+      "description": "Display not working..",
+      "priority": "1",
+      "id": "685",
       "status": "open"
     }
   ]

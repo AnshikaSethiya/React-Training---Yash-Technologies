@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Form, Alert } from "react-bootstrap";
+import { Form, Alert, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { VscAdd } from 'react-icons/vsc'
 
 const AddDefect = () => {
   const [addDefect, setAddDefect] = useState({
@@ -107,6 +109,7 @@ const AddDefect = () => {
               name="category"
               value={addDefect.category}
             >
+              <option>---Select---</option>
               <option value="UI">UI</option>
               <option value="Functional">Functional </option>
               <option value="Change Request">Change Request</option>
@@ -135,6 +138,7 @@ const AddDefect = () => {
               name="priority"
               value={addDefect.priority}
             >
+              <option>---Select---</option>
               <option value="1">1</option>
               <option value="2">2 </option>
               <option value="3">3</option>
@@ -142,13 +146,23 @@ const AddDefect = () => {
             </Form.Select>
           </div>
           <br />
-          <button
-            className="button btn btn-primary"
-            type="submit"
-            onClick={(e) => onFormSubmit(e)}
-          >
-            Add Defect
-          </button>
+          <Row>
+            <Col lg={4} md={4} sm = {2}>
+                <button
+                className="button btn btn-primary"
+                type="submit"
+                onClick={(e) => onFormSubmit(e)}
+                style={{color:'white'}}
+              >
+                <VscAdd style={{color:'white', fontSize:'1rem'}}/> Defect
+              </button>
+            </Col>
+            <Col>
+                <Link to="/view">
+                   <button className="button btn btn-warning" variant="success" >View Defects</button>
+                </Link>
+            </Col>
+          </Row>
         </Form>
       </div>
      

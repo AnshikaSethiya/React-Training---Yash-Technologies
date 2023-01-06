@@ -13,11 +13,15 @@ const Login = (props) => {
     const onFormSubmit = (e) => {
         e.preventDefault();
         if(user.username === "Anshika" && user.password === "Anshika123"){
+            sessionStorage.setItem("username", user.username)
+            setUser(user.username)
             navigate("/admin")
-            props.login(user.username)
+            // props.login(user.username)
         }else if(user.username === "test_user" && user.password === "test123"){
+            sessionStorage.setItem("username", user.username)
+            setUser(user.username)
             navigate("/add")
-            props.login(user.username);
+            // props.login(user.username);
         }else{
             window.alert('Username or Password incorrect!!');
         }
