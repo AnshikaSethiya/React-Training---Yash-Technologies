@@ -6,17 +6,18 @@ import Signup from './Components/Signup';
 import Header from './Components/Header';
 import { AddCarousel } from './Components/AddCarousel';
 import Footer from './Components/Footer';
+import Home from './Components/Home';
 
 function App() {
   return (
     <div className="App">
        <BrowserRouter>
        <Header />
-       <AddCarousel />
           <Container>
             <Routes>
-              <Route exact path= "/" element={<Login />}/>
-              {/* <Route exact path="/signup" element={<Signup />}/> */}
+              <Route exact path= "/" element={<Home />}/>
+              <Route exact path="/signup" element={<Signup />}/>
+              <Route exact path="/login" element={<Login />}/>
             </Routes>
           </Container>
           <Footer />

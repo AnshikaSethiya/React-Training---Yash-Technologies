@@ -68,6 +68,10 @@ const Header = () => {
     setCityName(name);
   };
 
+  const handleContainer = () => {
+    
+  }
+
 
   return (
     <>
@@ -93,9 +97,11 @@ const Header = () => {
           </div>
             {/* {!isAuth && 
             ( */}
-              <button className="signBtn">
-                  <p>Sign In</p>
-              </button>
+              <Link to="/signup" style={{textDecoration:"none"}}>
+                <button className="signBtn">
+                    <p>Sign Up</p>
+                </button>
+              </Link>
             {/* )} */}
         </div>
       </div>

@@ -115,6 +115,7 @@ body{
 
 /*---------------------------- Footer -------------------------*/
 .privacy_policy {
+	margin-top: 2rem;
 	font-size: 14px;
 	line-height: 18px;
 	text-align: justify;
@@ -288,5 +289,19 @@ input {
 ::placeholder {
 	color: #9b9b9b;
 }
-            
+       
+.card__text {
+	margin-top: 2.5rem;
+	font-size: 1rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+ }
+ 
+ .card__link {
+	text-decoration: none;
+	display: inline-block;
+	margin-left: 0.1em;
+	color: hsla(221, 73%, 63%, 0.75);
+ }
+ 
         

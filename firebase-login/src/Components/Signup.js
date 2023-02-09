@@ -1,29 +1,62 @@
-import React from "react";
-import { Form, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Form, Alert } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { useUserAuth } from "../context/UserAuthContext";
 
 const Signup = () => {
-  return (
-    <div className="body_wrapper">
-        <div className="wrapper">
-          <div className="card">
-             <h1 className="card__title">Sign up for free</h1>
-              <Button>Sign up with Google</Button>
-              <h3 class="card__head">or sign up with email </h3>
-              <Form className="card__form">
-              <div class="input-group">
-                  <input type="email" name="email" id="email" required />
-                  <label class="label" for="email">Enter Email</label>
-					    </div>
+  
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [password, setPassword] = useState("");
+  const {signUp}=useUserAuth();
+  let navigate = useNavigate();
 
-              <div class="input-group">
-						    <input type="password" name="password" id="password" required />
-						    <label class="label" for="password">Enter Password</label>
-					    </div>
-              </Form>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      await signUp(email, password);
+      navigate("/");
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
+  return (
+    <>
+    <div className="p-4 box">
+        <h2 className="mb-3">Firebase Auth Signup</h2>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Control
+              type="email"
+              placeholder="Email address"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Control
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </Form.Group>
+
+          <div className="d-grid gap-2">
+            <Button variant="primary" type="Submit">
+              Sign up
+            </Button>
           </div>
+        </Form>
       </div>
-    </div>
+      <div className="p-4 box mt-3 text-center">
+        Already have an account? <Link to="/">Log In</Link>
+      </div>
+    </>
+     
   );
 };
 
