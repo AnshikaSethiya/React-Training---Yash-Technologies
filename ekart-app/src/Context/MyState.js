@@ -17,6 +17,7 @@ const MyState = (props) => {
     })) )
   
     const [state , dispatch]=useReducer(cartReducer, {products:products,cart:[]})
+    
     const [productState , productDispatcher]=useReducer(productReducer ,{
       byStock:false,
       byFastDelivery:false,
