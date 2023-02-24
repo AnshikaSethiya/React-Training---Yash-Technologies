@@ -5,7 +5,6 @@ import React, {useState} from "react";
 const Register = () => {
   const [registerForm] = Form.useForm();
 
-
   const onFinishRegister = ( values) => {
     const randomNumber = parseInt(Math.random() * 1000);
     console.log(values);
