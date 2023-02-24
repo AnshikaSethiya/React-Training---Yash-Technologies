@@ -1,0 +1,42 @@
+{
+  "users": [
+    {
+      "username": "anshika_",
+      "password": "Anshika28",
+      "name": "Anshika",
+      "id": 807
+    },
+    {
+      "username": "lokesh_",
+      "password": "lokesh123",
+      "name": "sonu",
+      "id": 323
+    }
+  ],
+  "notes": [
+    {
+      "title": "todo",
+      "description": "testing",
+      "priority": "Low",
+      "id": 1
+    },
+    {
+      "title": "test123456",
+      "description": "testing",
+      "priority": "Moderate",
+      "id": 611
+    },
+    {
+      "title": "Bring charger",
+      "description": "Because Mr. Prajapat don't have",
+      "priority": "High",
+      "id": 372
+    },
+    {
+      "title": "Eat healthy Food ",
+      "description": "It's important to have it",
+      "priority": "Moderate",
+      "id": 129
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F8E367;
+}
+
+/* body{
+    width: 100vw;
+    height: 100vh;
+} */
+
+.notesBlock{
+    margin: 1.5rem;
+    position: relative;
+}
+
+.addButton{
+  border-radius: 50%;
+  position: relative;
+  left: 40%;
+  background-color: skyblue;
+  padding: 0.5rem;
+  color: black;
+}
+
+.cardNote{
+    background-color:skyblue;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: auto;
+    height: 11rem;
+}
+
+.cardNote * {
+    position: relative;
+    z-index: 2;
+}
+
+.title-box{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+h3{
+    display: inline-block;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    font-size: 1.4em;
+    text-align: center;
+ }
+
+  .title-box hr{
+    margin-top: -0.4rem;
+    margin-bottom: 1rem;
+    width: 17rem;
+    height: 0.20rem;
+    box-sizing: content-box;
+    border: none;
+    background: #D0BC57;
+  }
+
+  .note-footer{
+    position: absolute;
+    top: 95%;
+  }

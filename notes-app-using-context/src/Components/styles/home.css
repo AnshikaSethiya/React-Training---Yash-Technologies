@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F8E367;
+}
+
+.homeBlock{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeCard{
+    height: 90%;
+    width: 90%;
+    box-shadow: skyblue 0px 10px 36px 0px, skyblue 0px 0px 0px 1px;
+}

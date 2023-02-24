@@ -9,16 +9,17 @@ const Header = () => {
   const [term, setTerm] = useState("")
   const dispatch = useDispatch();
 
-  const submitHandler = (e) => {
+  const submitHandler = (e) => {    
     e.preventDefault()
     if(term === "") return alert("Please enter a term to search!!")
     dispatch(fetchAsyncMovies(term))
     dispatch(fetchAsyncShows(term))
     setTerm("")
   }
+
   return (
     <div className='header'>
-            <div className='logo'><Link to="/">Movie App</Link></div>
+      <div className='logo'><Link to="/">Movie App</Link></div>
           <div className='search-bar'>
             <form onSubmit={submitHandler}>
               <input type="text" placeholder='Search Movies or Shows' value={term} onChange={(e) => setTerm(e.target.value)}/>

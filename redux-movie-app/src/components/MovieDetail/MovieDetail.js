@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "./MovieDetail.scss"
 import {
@@ -11,8 +11,9 @@ import {
 const MovieDetail = () => {
   const { imdbID } = useParams();
   const dispatch = useDispatch();
+
   const data = useSelector(getSelectedMovieOrShow);
-  console.log(data);
+  // console.log(location);
 
   useEffect(() => {
     dispatch(fetchAsyncMovieOrShowsDetail(imdbID));
