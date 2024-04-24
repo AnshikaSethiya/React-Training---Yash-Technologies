@@ -1,0 +1,13 @@
+.container {
+}
+
+.input-form {
+  width: 40%;
+  padding: 1%;
+  margin: 1%;
+}
+
+.errorText {
+  color: red;
+  font-size: 14px;
+}
